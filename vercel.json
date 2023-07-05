@@ -1,0 +1,5 @@
+{
+  "framework": "flask",
+  "command": "gunicorn app:app",
+  "port": 3000
+}

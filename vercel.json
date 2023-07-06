@@ -1,5 +1,13 @@
 {
-  "framework": "flask",
-  "command": "gunicorn app:app",
-  "port": 3000
+  "version": 2,
+  "builds": [
+    {
+      "src": "main.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "main.py" }
+  ]
 }
